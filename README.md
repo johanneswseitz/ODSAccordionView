@@ -11,9 +11,11 @@ Yet another accordion style container view
 * Autolayout compatible
 * Uses ARC
 
-## Screenshot
+## Screenshots
 
-![Screenshot](screenshot.png)
+![Screenshot 1](Screenshot1.png)
+![Screenshot 2](Screenshot2.png)
+![Demo](Demo.gif)
 
 ## Usage
 

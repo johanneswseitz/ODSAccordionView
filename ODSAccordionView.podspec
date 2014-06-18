@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 					   * No dependencies outside of UIKit
                        DESC
   s.homepage         = "http://ookami86.github.io/ODSAccordionView"
-  s.screenshots      = "https://raw.githubusercontent.com/Ookami86/ODSAccordionView/master/screenshot.png"
+  s.screenshots      = "https://raw.githubusercontent.com/Ookami86/ODSAccordionView/master/Screenshot1.png", "https://raw.githubusercontent.com/Ookami86/ODSAccordionView/master/Screenshot2.png"
   s.license          = 'MIT'
   s.author           = { "Johannes  Seitz" => "http://www.craftware.de" }
   s.source           = { :git => "git@github.com:Ookami86/ODSAccordionView.git", :tag => s.version.to_s }
