@@ -4,11 +4,24 @@
 [![License](https://img.shields.io/cocoapods/l/ODSAccordionView.svg?style=flat)](http://cocoadocs.org/docsets/ODSAccordionView)
 [![Platform](https://img.shields.io/cocoapods/p/ODSAccordionView.svg?style=flat)](http://cocoadocs.org/docsets/ODSAccordionView)
 
+Yet another accordion style container view
+
+* Made for iOS 7+.
+* Flat design
+* Autolayout compatible
+* Uses ARC
+
+## Screenshot
+
+![Screenshot](screenshot.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+Requires iOS 7 or above
 
 ## Installation
 
@@ -19,7 +32,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Johannes, 
+Johannes Seitz, http://www.craftware.de 
 
 ## License
 
