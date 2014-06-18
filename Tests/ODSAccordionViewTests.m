@@ -29,7 +29,7 @@
 
 - (void)test_accordionViewDeterminesContentSizeByAddingHeightOfSectionView {
     NSArray *sections = @[];
-    ODSAccordionView *accordionView = [[ODSAccordionView alloc] initWithSections:sections];
+    ODSAccordionView *accordionView = [[ODSAccordionView alloc] initWithSections:sections andSectionStyle:nil];
 }
 
 @end

@@ -6,22 +6,23 @@
 #
 Pod::Spec.new do |s|
   s.name             = "ODSAccordionView"
-  s.version          = "0.1"
+  s.version          = "0.1.1"
   s.summary          = "Yet another accordion style container view."
   s.description      = <<-DESC
                        Yet another accordion style container view
 
                        * Made for iOS 7+.
 					   * Flat design
-                       * Autolayout compatible
+                       * Autorotation compatible
 					   * Uses ARC
+					   * No dependencies outside of UIKit
                        DESC
-  s.homepage         = "http://EXAMPLE/NAME"
-  s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "http://ookami86.github.io/ODSAccordionView"
+  s.screenshots      = "https://raw.githubusercontent.com/Ookami86/ODSAccordionView/master/screenshot.png"
   s.license          = 'MIT'
   s.author           = { "Johannes  Seitz" => "http://www.craftware.de" }
-  s.source           = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/EXAMPLE'
+  s.source           = { :git => "git@github.com:Ookami86/ODSAccordionView.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/ookami86'
 
   s.platform     = :ios, '7.0'
   s.ios.deployment_target = '7.0'
@@ -29,9 +30,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes'
-  s.resources = 'Assets/*.png'
+  #s.resources = 'Assets/*.png'
 
   s.public_header_files = 'Classes/**/*.h'
-  # s.frameworks = 'SomeFramework', 'AnotherFramework'
-  # s.dependency 'JSONKit', '~> 1.4'
 end

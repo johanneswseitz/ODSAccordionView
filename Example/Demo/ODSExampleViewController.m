@@ -87,6 +87,7 @@
 
 -(UIView *)webView {
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 400)];
+    webView.scrollView.scrollEnabled = NO;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.printhelloworld.de"]]];
     return webView;
 }

@@ -18,6 +18,7 @@
 		62DB0B9B195056AB000E8614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B8B195056AB000E8614 /* Foundation.framework */; };
 		62DB0B9D195056AB000E8614 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B9C195056AB000E8614 /* UIKit.framework */; };
 		62DB0BA0195056AB000E8614 /* libODSAccordionView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B88195056AB000E8614 /* libODSAccordionView.a */; };
+		62FED10F1951D2FC004745FB /* ODSArrowIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FED10E1951D2FC004745FB /* ODSArrowIcon.m */; };
 		AB428D942CED69741836E016 /* ODSAccordionSectionStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AB42893AB44A9BCCCAEBB400 /* ODSAccordionSectionStyle.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		62DB0B98195056AB000E8614 /* ODSAccordionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ODSAccordionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DB0B99195056AB000E8614 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		62DB0B9C195056AB000E8614 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		62FED10D1951D2FC004745FB /* ODSArrowIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSArrowIcon.h; sourceTree = "<group>"; };
+		62FED10E1951D2FC004745FB /* ODSArrowIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSArrowIcon.m; sourceTree = "<group>"; };
 		AB42893AB44A9BCCCAEBB400 /* ODSAccordionSectionStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionSectionStyle.m; sourceTree = "<group>"; };
 		AB428F58E0375AF0030B6D45 /* ODSAccordionSectionStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSAccordionSectionStyle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +102,8 @@
 				62898742195066D800C78D50 /* ODSMacros.h */,
 				AB42893AB44A9BCCCAEBB400 /* ODSAccordionSectionStyle.m */,
 				AB428F58E0375AF0030B6D45 /* ODSAccordionSectionStyle.h */,
+				62FED10D1951D2FC004745FB /* ODSArrowIcon.h */,
+				62FED10E1951D2FC004745FB /* ODSArrowIcon.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				628987471950773D00C78D50 /* ODSAccordionSectionView.m in Sources */,
+				62FED10F1951D2FC004745FB /* ODSArrowIcon.m in Sources */,
 				6289874119505F2800C78D50 /* ODSAccordionView.m in Sources */,
 				6289874019505F2800C78D50 /* ODSAccordionSection.m in Sources */,
 				AB428D942CED69741836E016 /* ODSAccordionSectionStyle.m in Sources */,

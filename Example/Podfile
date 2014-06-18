@@ -2,7 +2,7 @@
 platform :ios, '7.0'
 
 target "Demo" do
-  podspec :path => "../ODSAccordionView.podspec"
+  #podspec :path => "../ODSAccordionView.podspec"
   pod "ODSAccordionView", :path => "../"
 end
 

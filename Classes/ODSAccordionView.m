@@ -78,10 +78,12 @@
             if (expandedSection.isExpanded){
                 CGRect expandedSectionRect = [self convertRect:expandedSection.sectionView.frame
                                                       fromView:expandedSection];
-                [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, 1, 100) animated:YES];
+                [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, 1, 100)
+                                 animated:YES];
             }
+        } completion:^(BOOL finished){
+            [self flashScrollIndicators];    
         }];
-        [self flashScrollIndicators];
     }
 }
 

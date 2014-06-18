@@ -1,5 +1,5 @@
 PODS:
-  - ODSAccordionView (0.1)
+  - ODSAccordionView (0.1.1)
 
 DEPENDENCIES:
   - ODSAccordionView (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ODSAccordionView: dbfc84da43419f9fae0047a436b788a209683627
+  ODSAccordionView: d2d4af1c53e9ca26e1b8c5435a7e469cb1633213
 
 COCOAPODS: 0.33.1
