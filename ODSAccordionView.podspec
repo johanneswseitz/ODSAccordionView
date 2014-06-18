@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
 					   * Uses ARC
 					   * No dependencies outside of UIKit
                        DESC
-  s.homepage         = "http://ookami86.github.io/ODSAccordionView"
+  s.homepage         = "https://github.com/Ookami86/ODSAccordionView"
   s.screenshots      = "https://raw.githubusercontent.com/Ookami86/ODSAccordionView/master/Screenshot1.png", "https://raw.githubusercontent.com/Ookami86/ODSAccordionView/master/Screenshot2.png"
   s.license          = 'MIT'
   s.author           = { "Johannes  Seitz" => "http://www.craftware.de" }
-  s.source           = { :git => "git@github.com:Ookami86/ODSAccordionView.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/Ookami86/ODSAccordionView.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/ookami86'
 
   s.platform     = :ios, '7.0'

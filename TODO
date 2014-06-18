@@ -1,3 +1,4 @@
 * Maybe add CI?
 * Colour for arrow
 * Hide arrow
+* intrinsicContentSize instead of frame.size.height
