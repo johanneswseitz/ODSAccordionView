@@ -71,7 +71,8 @@
 
 -(UITextView *)textView {
     UITextView *textView = [[UITextView alloc] init];
-    textView.frame = CGRectMake(0, 0, 0, 300);
+    textView.frame = CGRectMake(0, 0, 0, 100);
+    textView.backgroundColor = [UIColor clearColor];
     textView.text = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.\n\n Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.\n Donec et mollis dolor.";
     return textView;
     
@@ -81,7 +82,7 @@
     UIImage *image = [UIImage imageNamed:@"catcontent"];
     NSAssert(image != nil, @"image not found");
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.contentMode = UIViewContentModeBottom;
     return imageView;
 }
 
