@@ -25,3 +25,5 @@ DerivedData
 #
 # Pods/
 
+#Appcode
+.idea/workspace.xml

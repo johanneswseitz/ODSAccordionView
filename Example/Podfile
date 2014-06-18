@@ -1,12 +1,14 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '7.0'
+platform :ios, '7.0'
 
 target "Demo" do
+  podspec :path => "../ODSAccordionView.podspec"
   pod "ODSAccordionView", :path => "../"
 end
 
 # Uncomment the following lines to add testing dependencies
-# target "DemoTests" do
-#   pod 'Expecta'
-# end
+#target "DemoTests" do
+#   pod 'OCHamcrest'
+#   pod 'OCMockito'
+#end
 

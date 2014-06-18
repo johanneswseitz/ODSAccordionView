@@ -1,0 +1,14 @@
+PODS:
+  - ODSAccordionView (0.1)
+
+DEPENDENCIES:
+  - ODSAccordionView (from `../`)
+
+EXTERNAL SOURCES:
+  ODSAccordionView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ODSAccordionView: dbfc84da43419f9fae0047a436b788a209683627
+
+COCOAPODS: 0.33.1

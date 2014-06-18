@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6289874019505F2800C78D50 /* ODSAccordionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289873C19505F2800C78D50 /* ODSAccordionSection.m */; };
+		6289874119505F2800C78D50 /* ODSAccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289873F19505F2800C78D50 /* ODSAccordionView.m */; };
+		628987471950773D00C78D50 /* ODSAccordionSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 628987461950773D00C78D50 /* ODSAccordionSectionView.m */; };
+		62BAE4CF1950573F00105BF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62BAE4CB1950573F00105BF4 /* InfoPlist.strings */; };
+		62BAE4D01950573F00105BF4 /* ODSAccordionViewTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62BAE4CD1950573F00105BF4 /* ODSAccordionViewTests-Info.plist */; };
+		62BAE4D11950573F00105BF4 /* ODSAccordionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BAE4CE1950573F00105BF4 /* ODSAccordionViewTests.m */; };
+		62DB0B8C195056AB000E8614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B8B195056AB000E8614 /* Foundation.framework */; };
+		62DB0B9A195056AB000E8614 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B99195056AB000E8614 /* XCTest.framework */; };
+		62DB0B9B195056AB000E8614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B8B195056AB000E8614 /* Foundation.framework */; };
+		62DB0B9D195056AB000E8614 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B9C195056AB000E8614 /* UIKit.framework */; };
+		62DB0BA0195056AB000E8614 /* libODSAccordionView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B88195056AB000E8614 /* libODSAccordionView.a */; };
+		AB428D942CED69741836E016 /* ODSAccordionSectionStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AB42893AB44A9BCCCAEBB400 /* ODSAccordionSectionStyle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62DB0B9E195056AB000E8614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62DB0B80195056AB000E8614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62DB0B87195056AB000E8614;
+			remoteInfo = ODSAccordionView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		62DB0B86195056AB000E8614 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6289873B19505F2800C78D50 /* ODSAccordionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSAccordionSection.h; sourceTree = "<group>"; };
+		6289873C19505F2800C78D50 /* ODSAccordionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionSection.m; sourceTree = "<group>"; };
+		6289873D19505F2800C78D50 /* ODSAccordionView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ODSAccordionView-Prefix.pch"; path = "../Classes/ODSAccordionView-Prefix.pch"; sourceTree = "<group>"; };
+		6289873E19505F2800C78D50 /* ODSAccordionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSAccordionView.h; sourceTree = "<group>"; };
+		6289873F19505F2800C78D50 /* ODSAccordionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionView.m; sourceTree = "<group>"; };
+		62898742195066D800C78D50 /* ODSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSMacros.h; sourceTree = "<group>"; };
+		628987451950773D00C78D50 /* ODSAccordionSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSAccordionSectionView.h; sourceTree = "<group>"; };
+		628987461950773D00C78D50 /* ODSAccordionSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionSectionView.m; sourceTree = "<group>"; };
+		62BAE4CC1950573F00105BF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		62BAE4CD1950573F00105BF4 /* ODSAccordionViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ODSAccordionViewTests-Info.plist"; sourceTree = "<group>"; };
+		62BAE4CE1950573F00105BF4 /* ODSAccordionViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionViewTests.m; sourceTree = "<group>"; };
+		62DB0B88195056AB000E8614 /* libODSAccordionView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libODSAccordionView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		62DB0B8B195056AB000E8614 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		62DB0B98195056AB000E8614 /* ODSAccordionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ODSAccordionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62DB0B99195056AB000E8614 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		62DB0B9C195056AB000E8614 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AB42893AB44A9BCCCAEBB400 /* ODSAccordionSectionStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionSectionStyle.m; sourceTree = "<group>"; };
+		AB428F58E0375AF0030B6D45 /* ODSAccordionSectionStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSAccordionSectionStyle.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62DB0B85195056AB000E8614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62DB0B8C195056AB000E8614 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62DB0B95195056AB000E8614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62DB0B9A195056AB000E8614 /* XCTest.framework in Frameworks */,
+				62DB0B9D195056AB000E8614 /* UIKit.framework in Frameworks */,
+				62DB0BA0195056AB000E8614 /* libODSAccordionView.a in Frameworks */,
+				62DB0B9B195056AB000E8614 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6289873A19505F2800C78D50 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				628987451950773D00C78D50 /* ODSAccordionSectionView.h */,
+				628987461950773D00C78D50 /* ODSAccordionSectionView.m */,
+				6289873B19505F2800C78D50 /* ODSAccordionSection.h */,
+				6289873C19505F2800C78D50 /* ODSAccordionSection.m */,
+				6289873E19505F2800C78D50 /* ODSAccordionView.h */,
+				6289873F19505F2800C78D50 /* ODSAccordionView.m */,
+				62898742195066D800C78D50 /* ODSMacros.h */,
+				AB42893AB44A9BCCCAEBB400 /* ODSAccordionSectionStyle.m */,
+				AB428F58E0375AF0030B6D45 /* ODSAccordionSectionStyle.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		62BAE4CA1950573F00105BF4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				62BAE4CB1950573F00105BF4 /* InfoPlist.strings */,
+				62BAE4CD1950573F00105BF4 /* ODSAccordionViewTests-Info.plist */,
+				62BAE4CE1950573F00105BF4 /* ODSAccordionViewTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		62DB0B7F195056AB000E8614 = {
+			isa = PBXGroup;
+			children = (
+				6289873A19505F2800C78D50 /* Classes */,
+				62BAE4CA1950573F00105BF4 /* Tests */,
+				62DB0B8E195056AB000E8614 /* Supporting Files */,
+				62DB0B8A195056AB000E8614 /* Frameworks */,
+				62DB0B89195056AB000E8614 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		62DB0B89195056AB000E8614 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62DB0B88195056AB000E8614 /* libODSAccordionView.a */,
+				62DB0B98195056AB000E8614 /* ODSAccordionViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62DB0B8A195056AB000E8614 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62DB0B8B195056AB000E8614 /* Foundation.framework */,
+				62DB0B99195056AB000E8614 /* XCTest.framework */,
+				62DB0B9C195056AB000E8614 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62DB0B8E195056AB000E8614 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6289873D19505F2800C78D50 /* ODSAccordionView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = ODSAccordionView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62DB0B87195056AB000E8614 /* ODSAccordionView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62DB0BAB195056AB000E8614 /* Build configuration list for PBXNativeTarget "ODSAccordionView" */;
+			buildPhases = (
+				62DB0B84195056AB000E8614 /* Sources */,
+				62DB0B85195056AB000E8614 /* Frameworks */,
+				62DB0B86195056AB000E8614 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ODSAccordionView;
+			productName = ODSAccordionView;
+			productReference = 62DB0B88195056AB000E8614 /* libODSAccordionView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		62DB0B97195056AB000E8614 /* ODSAccordionViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62DB0BAE195056AB000E8614 /* Build configuration list for PBXNativeTarget "ODSAccordionViewTests" */;
+			buildPhases = (
+				62DB0B94195056AB000E8614 /* Sources */,
+				62DB0B95195056AB000E8614 /* Frameworks */,
+				62DB0B96195056AB000E8614 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62DB0B9F195056AB000E8614 /* PBXTargetDependency */,
+			);
+			name = ODSAccordionViewTests;
+			productName = ODSAccordionViewTests;
+			productReference = 62DB0B98195056AB000E8614 /* ODSAccordionViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		62DB0B80195056AB000E8614 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Johannes W. Seitz";
+			};
+			buildConfigurationList = 62DB0B83195056AB000E8614 /* Build configuration list for PBXProject "ODSAccordionView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 62DB0B7F195056AB000E8614;
+			productRefGroup = 62DB0B89195056AB000E8614 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				62DB0B87195056AB000E8614 /* ODSAccordionView */,
+				62DB0B97195056AB000E8614 /* ODSAccordionViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		62DB0B96195056AB000E8614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62BAE4D01950573F00105BF4 /* ODSAccordionViewTests-Info.plist in Resources */,
+				62BAE4CF1950573F00105BF4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62DB0B84195056AB000E8614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				628987471950773D00C78D50 /* ODSAccordionSectionView.m in Sources */,
+				6289874119505F2800C78D50 /* ODSAccordionView.m in Sources */,
+				6289874019505F2800C78D50 /* ODSAccordionSection.m in Sources */,
+				AB428D942CED69741836E016 /* ODSAccordionSectionStyle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62DB0B94195056AB000E8614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62BAE4D11950573F00105BF4 /* ODSAccordionViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62DB0B9F195056AB000E8614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62DB0B87195056AB000E8614 /* ODSAccordionView */;
+			targetProxy = 62DB0B9E195056AB000E8614 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		62BAE4CB1950573F00105BF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62BAE4CC1950573F00105BF4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		62DB0BA9195056AB000E8614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		62DB0BAA195056AB000E8614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		62DB0BAC195056AB000E8614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ODSAccordionView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/ODSAccordionView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		62DB0BAD195056AB000E8614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ODSAccordionView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/ODSAccordionView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		62DB0BAF195056AB000E8614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/ODSAccordionView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tests/ODSAccordionViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		62DB0BB0195056AB000E8614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/ODSAccordionView-Prefix.pch";
+				INFOPLIST_FILE = "Tests/ODSAccordionViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62DB0B83195056AB000E8614 /* Build configuration list for PBXProject "ODSAccordionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62DB0BA9195056AB000E8614 /* Debug */,
+				62DB0BAA195056AB000E8614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62DB0BAB195056AB000E8614 /* Build configuration list for PBXNativeTarget "ODSAccordionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62DB0BAC195056AB000E8614 /* Debug */,
+				62DB0BAD195056AB000E8614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62DB0BAE195056AB000E8614 /* Build configuration list for PBXNativeTarget "ODSAccordionViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62DB0BAF195056AB000E8614 /* Debug */,
+				62DB0BB0195056AB000E8614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 62DB0B80195056AB000E8614 /* Project object */;
+}
