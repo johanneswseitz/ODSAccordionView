@@ -15,10 +15,8 @@
 @end
 
 @implementation ODSAccordionSectionView {
-    UIView *_sectionView;
     ODSAccordionSectionStyle *_sectionStyle;
     CGFloat _sectionViewAlpha;
-    BOOL _open;
 }
 
 -(instancetype)initWithTitle:(NSString *)sectionTitle
@@ -37,6 +35,7 @@
         [self collapseSectionAnimated:NO];
         [self setClipsToBounds:YES];
     }
+
     return self;
 }
 
@@ -64,14 +63,14 @@
 }
 
 -(void)collapseSectionAnimated:(BOOL)animated {
-    _open = NO;
+    _expanded = NO;
     self.height = self.collapsedHeight;
     _sectionViewAlpha = 0.0;
     [self sectionViewAlphaChanged:animated];
 }
 
 -(void)expandSectionAnimated:(BOOL)animated {
-    _open = YES;
+    _expanded = YES;
     self.height = self.expandedHeight;
     _sectionViewAlpha = 1.0;
     [self sectionViewAlphaChanged:animated];
@@ -86,7 +85,7 @@
 }
 
 -(void)toggleButtonPressed:(id)sectionPressed {
-    if (_open){
+    if (_expanded){
         [self collapseSectionAnimated:YES];
     } else {
         [self expandSectionAnimated:YES];

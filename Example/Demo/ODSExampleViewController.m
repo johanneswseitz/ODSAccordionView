@@ -64,10 +64,9 @@
     self.view.backgroundColor = lightBlue;
 }
 
--(void) viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     [_accordionView flashScrollIndicators];
 }
-
 
 -(UITextView *)textView {
     UITextView *textView = [[UITextView alloc] init];

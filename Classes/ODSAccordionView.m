@@ -60,11 +60,9 @@
     for (ODSAccordionSectionView *section in _sectionViews) {
         CGRect newFrame = CGRectMake(0, lastSectionBottom, self.width, section.height);
         if (!CGRectEqualToRect(newFrame, section.frame)){
-            [UIView animateWithDuration:0.5 animations:^{
-                section.frame = newFrame;
-                [self updateScrollViewContentSize];
-            }];
+            section.frame = newFrame;
         }
+        [self updateScrollViewContentSize];
         lastSectionBottom = lastSectionBottom + section.height;
     }
 }
@@ -74,8 +72,16 @@
                        change:(NSDictionary *)change
                       context:(void *)context {
     if ([keyPath isEqualToString:@"height"]) {
-        [self setNeedsLayout];
-        [self updateScrollViewContentSize];
+        ODSAccordionSectionView *expandedSection = (ODSAccordionSectionView *) object;
+        [UIView animateWithDuration:0.5 animations:^{
+            [self layoutSubviews];
+            if (expandedSection.isExpanded){
+                CGRect expandedSectionRect = [self convertRect:expandedSection.sectionView.frame
+                                                      fromView:expandedSection];
+                [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, 1, 100) animated:YES];
+            }
+        }];
+        [self flashScrollIndicators];
     }
 }
 

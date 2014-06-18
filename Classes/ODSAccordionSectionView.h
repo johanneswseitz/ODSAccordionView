@@ -15,6 +15,8 @@
 
 @property (nonatomic, readwrite) CGFloat height;
 @property (nonatomic, readonly) UIButton *header;
+@property (nonatomic, readonly) UIView *sectionView;
+@property (nonatomic, readonly, getter=isExpanded) BOOL expanded;
 
 -(instancetype)initWithTitle:(NSString *)sectionTitle
                      andView:(UIView *)sectionView
