@@ -11,35 +11,47 @@
 #import "ODSAccordionSectionView.h"
 #import "ODSAccordionSectionStyle.h"
 
+#define DIVIDER_HEIGHT 0.5
 
 @implementation ODSAccordionView {
     NSArray *_sectionViews;
+    ODSAccordionSectionStyle *_sectionStyle;
 }
 
 -(id)initWithSections:(NSArray *)sections andSectionStyle:(ODSAccordionSectionStyle *)sectionStyle {
     self = [super init];
     if (self) {
         _sectionViews = @[];
+        _sectionStyle = sectionStyle;
         for (NSUInteger i = 0; i < [sections count]; i++) {
             ODSAccordionSection*currentSection = [sections objectAtIndex:i];
-            ODSAccordionSectionView *sectionView = [[ODSAccordionSectionView alloc] initWithTitle:currentSection.title
-                                                                        andView:currentSection.view
-                                                                   sectionStyle:sectionStyle];
-            [sectionView addObserver:self forKeyPath:@"height" options:0 context:nil];
-            _sectionViews = [_sectionViews arrayByAddingObject:sectionView];
-            [self addSubview:sectionView];
-            BOOL isLastOrFirstSection = i == 0 || i == [_sectionViews count];
-            if (!isLastOrFirstSection){
-                [sectionView addSubview:[self makeDivider:sectionStyle.dividerColour]];
-            }
+            ODSAccordionSectionView *sectionView =
+                    [[ODSAccordionSectionView alloc] initWithTitle:currentSection.title
+                                                           andView:currentSection.view
+                                                      sectionStyle:sectionStyle];
+            [self addSection:sectionView];
         }
-        //a[self layoutIfNeeded];
     }
     return self;
 }
 
+-(void)addSection:(ODSAccordionSectionView*)newSection {
+    [self addSubview:newSection];
+    [self requestNotificationWhenSectionHeightChanges:newSection];
+    _sectionViews = [_sectionViews arrayByAddingObject:newSection];
+    BOOL isFirstSection = [_sectionViews count] == 1;
+    if (!isFirstSection){
+        [newSection addSubview:[self makeDivider:_sectionStyle.dividerColour]];
+    }
+}
+
+
+-(void)requestNotificationWhenSectionHeightChanges:(ODSAccordionSectionView *)sectionView {
+    [sectionView addObserver:self forKeyPath:@"height" options:0 context:nil];
+}
+
 -(UIView *)makeDivider:(UIColor *)dividerColour {
-    UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0.5)];
+    UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, DIVIDER_HEIGHT)];
     if (dividerColour){
         divider.backgroundColor = dividerColour;
     } else {
@@ -49,22 +61,25 @@
     return divider;
 }
 
--(void)updateScrollViewContentSize {
-    CGFloat contentHeight = [self calculateContentHeight];
-    self.contentSize = CGSizeMake([self width], contentHeight);
-}
-
 -(void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat lastSectionBottom = 0;
+    [self recalculateSectionPositionsAndHeight];
+}
+
+-(void)recalculateSectionPositionsAndHeight {
+    CGFloat bottomOfPreviousSection = 0;
     for (ODSAccordionSectionView *section in _sectionViews) {
-        CGRect newFrame = CGRectMake(0, lastSectionBottom, self.width, section.height);
+        CGRect newFrame = CGRectMake(0, bottomOfPreviousSection, self.width, section.height);
         if (!CGRectEqualToRect(newFrame, section.frame)){
             section.frame = newFrame;
         }
-        [self updateScrollViewContentSize];
-        lastSectionBottom = lastSectionBottom + section.height;
+        bottomOfPreviousSection = bottomOfPreviousSection + section.height;
     }
+    [self updateScrollViewContentSize:bottomOfPreviousSection];
+}
+
+-(void)updateScrollViewContentSize:(CGFloat)bottomOfLastSection {
+    self.contentSize = CGSizeMake([self width], bottomOfLastSection);
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath
@@ -72,31 +87,27 @@
                        change:(NSDictionary *)change
                       context:(void *)context {
     if ([keyPath isEqualToString:@"height"]) {
-        ODSAccordionSectionView *expandedSection = (ODSAccordionSectionView *) object;
+        ODSAccordionSectionView *changedSection = (ODSAccordionSectionView *) object;
         [UIView animateWithDuration:0.5 animations:^{
-            [self layoutSubviews];
-            if (expandedSection.isExpanded){
-                CGRect expandedSectionRect = [self convertRect:expandedSection.sectionView.frame
-                                                      fromView:expandedSection];
-                [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, 1, 100)
-                                 animated:YES];
-            }
+            [self recalculateSectionPositionsAndHeight];
         } completion:^(BOOL finished){
-            [self flashScrollIndicators];    
+            if (changedSection.isExpanded){
+                [self makeSureSomeOfTheExpandedContentIsVisible:changedSection];
+            }
+            [self flashScrollIndicators];
         }];
     }
 }
 
--(CGFloat)width {
-    return self.frame.size.width;
+-(void)makeSureSomeOfTheExpandedContentIsVisible:(ODSAccordionSectionView *)expandedSection {
+    CGRect expandedSectionRect = [self convertRect:expandedSection.sectionView.frame
+                                          fromView:expandedSection];
+    [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, 1, 100)
+                     animated:YES];
 }
 
--(CGFloat)calculateContentHeight {
-    CGFloat totalHeight = 0;
-    for (ODSAccordionSectionView *section in _sectionViews) {
-        totalHeight += section.height;
-    }
-    return totalHeight;
+-(CGFloat)width {
+    return self.frame.size.width;
 }
 
 @end

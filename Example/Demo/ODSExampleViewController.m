@@ -41,14 +41,15 @@
     UIColor *lightBlue = [UIColor colorWithRed:49/fullSpectrum green:130/fullSpectrum blue:189/fullSpectrum alpha:1];
     
     ODSAccordionSectionStyle *style = [[ODSAccordionSectionStyle alloc] init];
+    style.arrowColour = lightBlue;
+    style.headerStyle = ODSAccordionHeaderStyleLabelCentered;
     style.headerTitleLabelTextColour = [UIColor blackColor];
     style.headerTitleLabelFont = [UIFont systemFontOfSize:15];
     style.backgroundColour = blue;
     style.headerBackgroundColour = darkBlue;
-    style.headerTitleTextAlignment = NSTextAlignmentLeft;
     style.dividerColour = [UIColor lightGrayColor];
     style.headerHeight = 40;
-    
+
     NSArray *sections = @[
                           [[ODSAccordionSection alloc] initWithTitle:@"Text"
                                                              andView: [self textView]],
