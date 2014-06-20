@@ -19,6 +19,7 @@
         _backgroundColour = [UIColor clearColor];
         _dividerColour = [UIColor lightGrayColor];
         _arrowVisible = YES;
+        _stickyHeaders = YES;
     }
     return self;
 }

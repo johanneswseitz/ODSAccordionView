@@ -44,6 +44,7 @@
     _header.backgroundColor = _sectionStyle.headerBackgroundColour;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchDown];
+    _header.alpha = 0.9;
     [self addSubview:_header];
 }
 
@@ -51,7 +52,7 @@
     _arrowIcon = [[ODSArrowIcon alloc] initWithFrame:CGRectMake(0, 0, 30, 5)];
     [_arrowIcon setHidden:!_sectionStyle.arrowVisible];
     _arrowIcon.color = _sectionStyle.arrowColour;
-    [self addSubview:_arrowIcon];
+    [self.header addSubview:_arrowIcon];
 }
 
 -(void)collapseSectionAnimated:(BOOL)animated {
@@ -93,7 +94,12 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
-    _header.frame = CGRectMake(0, 0, self.width, self.headerHeight);
+    [self layoutHeader];
+    [self layoutSection];
+}
+
+-(void)layoutHeader {
+    _header.frame = CGRectMake(_header.frame.origin.x, _header.frame.origin.y, self.width, self.headerHeight);
     CGSize arrowSize = _arrowIcon.frame.size;
     if (_sectionStyle.headerStyle == ODSAccordionHeaderStyleLabelLeft){
         [_header setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
@@ -107,11 +113,14 @@
                                       arrowSize.width, arrowSize.height);
     } else if (_sectionStyle.headerStyle == ODSAccordionHeaderStyleLabelCentered) {
         [_header setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
-        [_header setTitleEdgeInsets: UIEdgeInsetsZero];
+        [_header setTitleEdgeInsets:UIEdgeInsetsZero];
         _arrowIcon.frame = CGRectMake(_header.center.x - (_arrowIcon.frame.size.width / 2),
                                       _header.frame.size.height - _arrowIcon.frame.size.height - MARGIN,
                                       _arrowIcon.frame.size.width, _arrowIcon.frame.size.height);
     }
+}
+
+-(void)layoutSection {
     _sectionView.frame = CGRectMake(0, self.headerHeight, self.width, _sectionView.frame.size.height);
 }
 

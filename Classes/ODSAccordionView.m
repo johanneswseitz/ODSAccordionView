@@ -42,7 +42,7 @@
     _sectionViews = [_sectionViews arrayByAddingObject:newSection];
     BOOL isFirstSection = [_sectionViews count] == 1;
     if (!isFirstSection){
-        [newSection addSubview:[self makeDivider:_sectionStyle.dividerColour]];
+        [newSection.header addSubview:[self makeDivider:_sectionStyle.dividerColour]];
     }
 }
 
@@ -74,6 +74,20 @@
 -(void)layoutSubviews {
     [super layoutSubviews];
     [self recalculateSectionPositionsAndHeight];
+    [self preventSectionHeaderFromBeingScrolledOutOfViewport];
+}
+
+-(void)preventSectionHeaderFromBeingScrolledOutOfViewport {
+    for (ODSAccordionSectionView *section in _sectionViews){
+        CGPoint contentOffsetInSection = [self convertPoint:self.contentOffset toView:section];
+        CGFloat highestPossiblePosition = 0;
+        CGFloat lowestPossiblePosition = section.frame.size.height - section.header.frame.size.height;
+        CGFloat headerYPosition = MAX(highestPossiblePosition, MIN(contentOffsetInSection.y, lowestPossiblePosition));
+
+        section.header.frame = CGRectMake(0, headerYPosition,
+                               section.header.frame.size.width, section.header.frame.size.height);
+        [section bringSubviewToFront:section.header];
+    }
 }
 
 -(void)recalculateSectionPositionsAndHeight {

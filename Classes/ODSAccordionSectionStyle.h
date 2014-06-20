@@ -31,5 +31,7 @@ typedef enum ODSAccordionHeaderStyle : NSUInteger {
 @property (nonatomic) UIColor *arrowColour;
 /// Defaults to YES
 @property (nonatomic) BOOL arrowVisible;
+/// Keep the section headers visible on top while scrolling. Defaults to YES
+@property (nonatomic) BOOL stickyHeaders;
 
 @end
