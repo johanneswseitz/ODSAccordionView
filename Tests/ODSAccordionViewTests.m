@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "ODSAccordionView.h"
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 
 @interface ODSAccordionViewTests : XCTestCase
 

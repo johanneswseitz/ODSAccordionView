@@ -73,4 +73,9 @@
     leftArrowPart.backgroundColor = color;
 }
 
+-(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    // Returning nil sends the touch event up the responder chain to let UIButton consume it
+    return nil;
+}
+
 @end
