@@ -19,14 +19,16 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        CGFloat overlap = 6;
+        self.userInteractionEnabled = NO;
 
+        CGFloat overlap = 3;
         leftArrowPart = [self makeArrowPart];
-        leftArrowPart.frame = CGRectMake(0, 0, frame.size.width / 2.0, frame.size.height);
+        CGFloat middle = frame.size.width / 2.0;
+        leftArrowPart.frame = CGRectMake(0, 0, middle + overlap, frame.size.height);
         [self addSubview: leftArrowPart];
         
         rightArrowPart = [self makeArrowPart];
-        rightArrowPart.frame = CGRectMake((frame.size.width) / 2.0 - overlap , 0, frame.size.width/2, frame.size.height);
+        rightArrowPart.frame = CGRectMake(middle - overlap , 0, frame.size.width/2 + overlap, frame.size.height);
         [self addSubview:rightArrowPart];
         
         self.color = [UIColor lightGrayColor];
@@ -71,11 +73,6 @@
     _color = color;
     rightArrowPart.backgroundColor = color;
     leftArrowPart.backgroundColor = color;
-}
-
--(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    // Returning nil sends the touch event up the responder chain to let UIButton consume it
-    return nil;
 }
 
 @end

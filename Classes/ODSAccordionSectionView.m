@@ -88,12 +88,7 @@
 }
 
 -(CGFloat)headerHeight {
-    if (_sectionStyle.headerHeight != 0){
-        return _sectionStyle.headerHeight;
-    } else {
-        CGFloat defaultHeaderHeight = 30;
-        return defaultHeaderHeight;
-    }
+    return _sectionStyle.headerHeight;
 }
 
 -(void)layoutSubviews {
@@ -112,8 +107,8 @@
                                       arrowSize.width, arrowSize.height);
     } else if (_sectionStyle.headerStyle == ODSAccordionHeaderStyleLabelCentered) {
         [_header setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
-        [_header setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-        _arrowIcon.frame = CGRectMake(_header.center.x - (_arrowIcon.frame.size.width / 2) + 3, // FIXME: button is smaller than frame
+        [_header setTitleEdgeInsets: UIEdgeInsetsZero];
+        _arrowIcon.frame = CGRectMake(_header.center.x - (_arrowIcon.frame.size.width / 2),
                                       _header.frame.size.height - _arrowIcon.frame.size.height - MARGIN,
                                       _arrowIcon.frame.size.width, _arrowIcon.frame.size.height);
     }
