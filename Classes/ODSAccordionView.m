@@ -12,6 +12,7 @@
 #import "ODSAccordionSectionStyle.h"
 
 #define DIVIDER_HEIGHT 0.5
+#define SECITON_HEIGHT_GETTER NSStringFromSelector(@selector(height))
 
 @implementation ODSAccordionView {
     NSArray *_sectionViews;
@@ -47,7 +48,16 @@
 
 
 -(void)requestNotificationWhenSectionHeightChanges:(ODSAccordionSectionView *)sectionView {
-    [sectionView addObserver:self forKeyPath:@"height" options:0 context:nil];
+    [sectionView addObserver:self forKeyPath:SECITON_HEIGHT_GETTER options:0 context:nil];
+}
+
+-(void)dealloc {
+    for (ODSAccordionSectionView *section in _sectionViews){
+        @try {
+            [section removeObserver:self forKeyPath:SECITON_HEIGHT_GETTER];
+        }
+        @catch (NSException * __unused exception) {}
+    }
 }
 
 -(UIView *)makeDivider:(UIColor *)dividerColour {
@@ -86,7 +96,7 @@
                      ofObject:(id)object
                        change:(NSDictionary *)change
                       context:(void *)context {
-    if ([keyPath isEqualToString:@"height"]) {
+    if ([keyPath isEqualToString:SECITON_HEIGHT_GETTER]) {
         ODSAccordionSectionView *changedSection = (ODSAccordionSectionView *) object;
         [UIView animateWithDuration:0.5 animations:^{
             [self recalculateSectionPositionsAndHeight];

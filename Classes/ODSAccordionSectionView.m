@@ -10,12 +10,7 @@
 #import "ODSAccordionSectionStyle.h"
 #import "ODSArrowIcon.h"
 
-#define MARGIN 10
-
-@interface ODSAccordionSectionView (private)
-
-
-@end
+#define MARGIN 8
 
 @implementation ODSAccordionSectionView {
     ODSAccordionSectionStyle *_sectionStyle;

@@ -4,6 +4,7 @@
 
 [improvement] Improved ODSAccordionSectionStyle with: Well-defined default values, ODSAccordionHeaderStyle enum, optionally hide the arrow
 [bugfix] Fixes an issue where a tap on the arrow would cause events to be swallowed
+[bugfix] Fixes an issue where the KVO observer was not properly deregistered
 
 ## 0.2.1
 
