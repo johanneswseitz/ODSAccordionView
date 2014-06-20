@@ -100,10 +100,10 @@
         ODSAccordionSectionView *changedSection = (ODSAccordionSectionView *) object;
         [UIView animateWithDuration:0.5 animations:^{
             [self recalculateSectionPositionsAndHeight];
-        } completion:^(BOOL finished){
             if (changedSection.isExpanded){
                 [self makeSureSomeOfTheExpandedContentIsVisible:changedSection];
             }
+        } completion:^(BOOL finished){
             [self flashScrollIndicators];
         }];
     }
