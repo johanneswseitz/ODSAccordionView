@@ -13,22 +13,22 @@
     if (self) {
         _headerHeight = 30;
         _headerTitleLabelFont = [UIFont systemFontOfSize:14];
-        _headerTitleLabelTextColour = [UIColor blackColor];
+        _headerTitleLabelTextColor = [UIColor blackColor];
         _headerStyle = ODSAccordionHeaderStyleLabelLeft;
-        _headerBackgroundColour = [UIColor clearColor];
-        _backgroundColour = [UIColor clearColor];
-        _dividerColour = [UIColor lightGrayColor];
+        _headerBackgroundColor = [UIColor clearColor];
+        _backgroundColor = [UIColor clearColor];
+        _dividerColor = [UIColor lightGrayColor];
         _arrowVisible = YES;
         _stickyHeaders = YES;
     }
     return self;
 }
 
--(UIColor *)arrowColour {
-    if (_arrowColour){
-        return _arrowColour;
+-(UIColor *)arrowColor {
+    if (_arrowColor){
+        return _arrowColor;
     } else {
-        return _dividerColour;
+        return _dividerColor;
     }
 }
 

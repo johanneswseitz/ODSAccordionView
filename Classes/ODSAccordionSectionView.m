@@ -25,7 +25,7 @@
     if (self) {
         _sectionStyle = sectionStyle;
         _sectionView = sectionView;
-        self.backgroundColor = _sectionStyle.backgroundColour;
+        self.backgroundColor = _sectionStyle.backgroundColor;
         [self setClipsToBounds:YES];
         [self makeHeader:sectionTitle];
         [self addArrowIcon];
@@ -39,9 +39,9 @@
 -(void)makeHeader:(NSString *)sectionTitle {
     _header = [UIButton buttonWithType:UIButtonTypeCustom];
     [_header setTitle:sectionTitle forState:UIControlStateNormal];
-    [_header setTitleColor:_sectionStyle.headerTitleLabelTextColour forState:UIControlStateNormal];
+    [_header setTitleColor:_sectionStyle.headerTitleLabelTextColor forState:UIControlStateNormal];
 
-    _header.backgroundColor = _sectionStyle.headerBackgroundColour;
+    _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchDown];
     _header.alpha = 0.9;
@@ -51,7 +51,7 @@
 -(void)addArrowIcon {
     _arrowIcon = [[ODSArrowIcon alloc] initWithFrame:CGRectMake(0, 0, 30, 5)];
     [_arrowIcon setHidden:!_sectionStyle.arrowVisible];
-    _arrowIcon.color = _sectionStyle.arrowColour;
+    _arrowIcon.color = _sectionStyle.arrowColor;
     [self.header addSubview:_arrowIcon];
 }
 

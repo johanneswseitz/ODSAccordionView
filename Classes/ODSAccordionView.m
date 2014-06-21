@@ -42,7 +42,7 @@
     _sectionViews = [_sectionViews arrayByAddingObject:newSection];
     BOOL isFirstSection = [_sectionViews count] == 1;
     if (!isFirstSection){
-        [newSection.header addSubview:[self makeDivider:_sectionStyle.dividerColour]];
+        [newSection.header addSubview:[self makeDivider:_sectionStyle.dividerColor]];
     }
 }
 
@@ -82,7 +82,7 @@
         CGPoint contentOffsetInSection = [self convertPoint:self.contentOffset toView:section];
         CGFloat highestPossiblePosition = 0;
         CGFloat lowestPossiblePosition = section.frame.size.height - section.header.frame.size.height;
-        CGFloat headerYPosition = MAX(highestPossiblePosition, MIN(contentOffsetInSection.y, lowestPossiblePosition));
+        CGFloat headerYPosition = MAX(highestPossiblePosition, MIN(contentOffsetInSection.y + self.contentInset.top, lowestPossiblePosition));
 
         section.header.frame = CGRectMake(0, headerYPosition,
                                section.header.frame.size.width, section.header.frame.size.height);

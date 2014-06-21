@@ -1,5 +1,9 @@
 # ODSAccordionView CHANGELOG
 
+## 0.3.1
+
+[bugfix] Fixes an issue where trailing headers would not work with translucent menu bars 
+
 ## 0.3.0
 
 [new feature] Option to keep section headers floating on top while scrolling, similar to UITableView

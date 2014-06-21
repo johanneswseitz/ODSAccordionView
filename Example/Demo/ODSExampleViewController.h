@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ODSExampleViewController : UIViewController
+@interface ODSExampleViewController : UIViewController <UIWebViewDelegate>
 
 @end

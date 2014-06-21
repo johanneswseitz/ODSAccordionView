@@ -41,13 +41,13 @@
     UIColor *lightBlue = [UIColor colorWithRed:49/fullSpectrum green:130/fullSpectrum blue:189/fullSpectrum alpha:1];
     
     ODSAccordionSectionStyle *style = [[ODSAccordionSectionStyle alloc] init];
-    style.arrowColour = lightBlue;
-    style.headerStyle = ODSAccordionHeaderStyleLabelCentered;
-    style.headerTitleLabelTextColour = [UIColor blackColor];
+    style.arrowColor = lightBlue;
+    style.headerStyle = ODSAccordionHeaderStyleLabelLeft;
+    style.headerTitleLabelTextColor = [UIColor blackColor];
     style.headerTitleLabelFont = [UIFont systemFontOfSize:15];
-    style.backgroundColour = blue;
-    style.headerBackgroundColour = darkBlue;
-    style.dividerColour = [UIColor lightGrayColor];
+    style.backgroundColor = blue;
+    style.headerBackgroundColor = darkBlue;
+    style.dividerColor = [UIColor lightGrayColor];
     style.headerHeight = 40;
 
     NSArray *sections = @[
@@ -61,6 +61,7 @@
                                                              andView: [self emptyView]],
                          ];
     _accordionView = [[ODSAccordionView alloc] initWithSections:sections andSectionStyle:style];
+    _accordionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.view = _accordionView;
     self.view.backgroundColor = lightBlue;
 }
@@ -78,6 +79,11 @@
     
 }
 
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    CGFloat webContentHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
+    webView.frame = CGRectMake(webView.frame.origin.x, webView.frame.origin.y, webView.frame.size.width, webContentHeight);
+}
+
 -(UIView *)imageView {
     UIImage *image = [UIImage imageNamed:@"catcontent"];
     NSAssert(image != nil, @"image not found");
@@ -90,6 +96,7 @@
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 400)];
     webView.scrollView.scrollEnabled = NO;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.printhelloworld.de"]]];
+    webView.delegate = self;
     return webView;
 }
 
