@@ -114,6 +114,7 @@
         ODSAccordionSectionView *changedSection = (ODSAccordionSectionView *) object;
         [UIView animateWithDuration:0.5 animations:^{
             [self recalculateSectionPositionsAndHeight];
+            [self preventSectionHeaderFromBeingScrolledOutOfViewport];
             if (changedSection.isExpanded){
                 [self makeSureSomeOfTheExpandedContentIsVisible:changedSection];
             }
