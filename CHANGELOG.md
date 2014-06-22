@@ -3,6 +3,7 @@
 ## 0.3.2
 
 [bugfix] Fixes an issue where sticky headers could not be disabled
+
 [bugfix] Only make headers transparent when sticky headers are activated
 
 ## 0.3.1
@@ -12,9 +13,13 @@
 ## 0.3.0
 
 [new feature] Option to keep section headers always visible on top while scrolling, similar to UITableView (sticky headers)
+
 [improvement] Improved ODSAccordionSectionStyle with: Well-defined default values, ODSAccordionHeaderStyle enum, optionally hide the arrow
+
 [improvement] Widget will immediately scroll to make some of the just expanded section is visible if necessary, instead of waiting for animations to complete
+
 [bugfix] Fixes an issue where a tap on the arrow would cause events to be swallowed
+
 [bugfix] Fixes an issue where the KVO observer was not properly deregistered
 
 ## 0.2.1
