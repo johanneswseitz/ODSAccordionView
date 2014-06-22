@@ -44,7 +44,6 @@
     _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchDown];
-    _header.alpha = 0.9;
     [self addSubview:_header];
 }
 

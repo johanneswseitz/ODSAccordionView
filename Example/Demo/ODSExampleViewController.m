@@ -49,6 +49,7 @@
     style.headerBackgroundColor = darkBlue;
     style.dividerColor = [UIColor lightGrayColor];
     style.headerHeight = 40;
+    style.stickyHeaders = YES;
 
     NSArray *sections = @[
                           [[ODSAccordionSection alloc] initWithTitle:@"Text"

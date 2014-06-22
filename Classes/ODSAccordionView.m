@@ -74,7 +74,9 @@
 -(void)layoutSubviews {
     [super layoutSubviews];
     [self recalculateSectionPositionsAndHeight];
-    [self preventSectionHeaderFromBeingScrolledOutOfViewport];
+    if (_sectionStyle.stickyHeaders){
+        [self preventSectionHeaderFromBeingScrolledOutOfViewport];
+    }
 }
 
 -(void)preventSectionHeaderFromBeingScrolledOutOfViewport {
@@ -83,9 +85,10 @@
         CGFloat highestPossiblePosition = 0;
         CGFloat lowestPossiblePosition = section.frame.size.height - section.header.frame.size.height;
         CGFloat headerYPosition = MAX(highestPossiblePosition, MIN(contentOffsetInSection.y + self.contentInset.top, lowestPossiblePosition));
-
+        
         section.header.frame = CGRectMake(0, headerYPosition,
                                section.header.frame.size.width, section.header.frame.size.height);
+        section.header.alpha = 0.95;
         [section bringSubviewToFront:section.header];
     }
 }
