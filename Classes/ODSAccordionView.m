@@ -11,7 +11,7 @@
 #import "ODSAccordionSectionView.h"
 #import "ODSAccordionSectionStyle.h"
 
-#define DIVIDER_HEIGHT 0.5
+#define DIVIDER_HEIGHT ([UIScreen mainScreen].scale == 2.0) ? 0.5 : 1.0
 #define SECTION_HEIGHT_GETTER NSStringFromSelector(@selector(height))
 
 @implementation ODSAccordionView {
