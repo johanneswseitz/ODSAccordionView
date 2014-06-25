@@ -10,6 +10,8 @@
 #import "ODSAccordionSectionStyle.h"
 #import "ODSArrowIcon.h"
 
+
+#define BOUNDS_KEY_PATH NSStringFromSelector(@selector(bounds))
 #define MARGIN 8
 
 @implementation ODSAccordionSectionView {
@@ -32,7 +34,7 @@
         [self addArrowIcon];
         
         [self addSubview: sectionView];
-        [sectionView addObserver:self forKeyPath:NSStringFromSelector(@selector(bounds)) options:0 context:nil];
+        [sectionView addObserver:self forKeyPath:BOUNDS_KEY_PATH options:0 context:nil];
         
         [self layoutIfNeeded];
         [self collapseSectionAnimated:NO];
@@ -44,7 +46,7 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if ([keyPath isEqualToString:NSStringFromSelector(@selector(bounds))] && self.expanded){
+    if ([keyPath isEqualToString:BOUNDS_KEY_PATH] && self.expanded){
         self.height = [self expandedHeight];
     }
     [self setNeedsLayout];
@@ -131,6 +133,13 @@
                                       _header.frame.size.height - _arrowIcon.frame.size.height - MARGIN,
                                       _arrowIcon.frame.size.width, _arrowIcon.frame.size.height);
     }
+}
+
+-(void)dealloc {
+    @try {
+        [_sectionView removeObserver:self forKeyPath:BOUNDS_KEY_PATH];
+    }
+    @catch (NSException * __unused exception) {}
 }
 
 -(void)layoutSection {
