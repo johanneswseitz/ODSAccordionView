@@ -1,5 +1,10 @@
 # ODSAccordionView CHANGELOG
 
+## 0.4.0
+
+[improvement] Sections now use the [UIView sizeThatFits:(CGSize) size] method to determine the height of the sections view instead of the frame/bounds of the view.
+[bugfix] Fixes a key-value-observing deregistration warning
+
 ## 0.3.3
 
 [bugfix] Fixes an issue resizing views inside accordion sections

@@ -96,17 +96,19 @@
 }
 
 -(UIView *)webView {
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 20)];
-    webView.scrollView.scrollEnabled = NO;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.printhelloworld.de"]]];
-    webView.delegate = self;
-    return webView;
+    return [self webViewForUrl:@"http://www.printhelloworld.de"];
 }
 
 -(UIView *)slowWebView {
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 20)];
-    webView.scrollView.scrollEnabled = NO;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://httpbin.org/delay/5"]]];
+    return [self webViewForUrl:@"http://httpbin.org/delay/5"];
+}
+
+-(UIWebView *)webViewForUrl:(NSString*)urlString {
+    // Make sure the frame you init your embedded WebView with does not have a zero heigh/width,
+    // otherwise it misbehaves and returns a sizeThatFits: of {0,0}
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 1, 20)];
+    webView.userInteractionEnabled = NO;
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     webView.delegate = self;
     return webView;
 }
@@ -114,7 +116,7 @@
 
 -(UIView *)emptyView {
     UIView *yourContent = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
-    yourContent.backgroundColor = [UIColor redColor];
+    yourContent.backgroundColor = [UIColor greenColor];
     return yourContent;
 }
 

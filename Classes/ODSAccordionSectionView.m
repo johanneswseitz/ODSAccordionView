@@ -143,11 +143,13 @@
 }
 
 -(void)layoutSection {
-    _sectionView.frame = CGRectMake(0, self.headerHeight, self.width, _sectionView.bounds.size.height);
+    CGSize fittingSize = [_sectionView sizeThatFits:_sectionView.bounds.size];
+    _sectionView.frame = CGRectMake(0, self.headerHeight, self.width, fittingSize.height);
 }
 
 -(CGFloat)expandedHeight {
-    return _sectionView.bounds.size.height  + self.headerHeight;
+    CGSize fittingSize = [_sectionView sizeThatFits:_sectionView.bounds.size];
+    return fittingSize.height  + self.headerHeight;
 }
 
 -(CGFloat)collapsedHeight {
