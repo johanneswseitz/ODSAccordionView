@@ -58,6 +58,8 @@
                                                              andView: [self imageView]],
                           [[ODSAccordionSection alloc] initWithTitle:@"Web content"
                                                              andView: [self webView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Slow loading web content"
+                                                             andView: [self slowWebView]],
                           [[ODSAccordionSection alloc] initWithTitle:@"Your own content"
                                                              andView: [self emptyView]],
                          ];
@@ -81,8 +83,8 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
-    CGFloat webContentHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
-    webView.frame = CGRectMake(webView.frame.origin.x, webView.frame.origin.y, webView.frame.size.width, webContentHeight);
+    CGFloat webContentHeight = webView.scrollView.contentSize.height;
+    webView.bounds = CGRectMake(webView.bounds.origin.x, webView.bounds.origin.y, webView.bounds.size.width, webContentHeight);
 }
 
 -(UIView *)imageView {
@@ -94,12 +96,21 @@
 }
 
 -(UIView *)webView {
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 400)];
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 20)];
     webView.scrollView.scrollEnabled = NO;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.printhelloworld.de"]]];
     webView.delegate = self;
     return webView;
 }
+
+-(UIView *)slowWebView {
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 20)];
+    webView.scrollView.scrollEnabled = NO;
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://httpbin.org/delay/5"]]];
+    webView.delegate = self;
+    return webView;
+}
+
 
 -(UIView *)emptyView {
     UIView *yourContent = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];

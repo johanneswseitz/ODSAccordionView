@@ -25,5 +25,8 @@ DerivedData
 #
 # Pods/
 
+Example/Podfile.lock
+Example/Pods/
+
 #Appcode
 .idea/workspace.xml

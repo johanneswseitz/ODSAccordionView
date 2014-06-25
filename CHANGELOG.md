@@ -1,5 +1,9 @@
 # ODSAccordionView CHANGELOG
 
+## 0.3.3
+
+[bugfix] Fixes an issue resizing views inside accordion sections
+
 ## 0.3.2
 
 [bugfix] Fixes an issue where sticky headers could not be disabled

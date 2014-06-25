@@ -73,6 +73,10 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
+    [self updateViewLayout];
+}
+
+-(void)updateViewLayout {
     [self recalculateSectionPositionsAndHeight];
     if (_sectionStyle.stickyHeaders){
         [self preventSectionHeaderFromBeingScrolledOutOfViewport];
@@ -84,7 +88,8 @@
         CGPoint contentOffsetInSection = [self convertPoint:self.contentOffset toView:section];
         CGFloat highestPossiblePosition = 0;
         CGFloat lowestPossiblePosition = section.frame.size.height - section.header.frame.size.height;
-        CGFloat headerYPosition = MAX(highestPossiblePosition, MIN(contentOffsetInSection.y + self.contentInset.top, lowestPossiblePosition));
+        CGFloat headerYPosition = MAX(highestPossiblePosition,
+                                      MIN(contentOffsetInSection.y + self.contentInset.top, lowestPossiblePosition));
         
         section.header.frame = CGRectMake(0, headerYPosition,
                                section.header.frame.size.width, section.header.frame.size.height);
@@ -116,8 +121,7 @@
     if ([keyPath isEqualToString:SECTION_HEIGHT_GETTER]) {
         ODSAccordionSectionView *changedSection = (ODSAccordionSectionView *) object;
         [UIView animateWithDuration:0.5 animations:^{
-            [self recalculateSectionPositionsAndHeight];
-            [self preventSectionHeaderFromBeingScrolledOutOfViewport];
+            [self updateViewLayout];
             if (changedSection.isExpanded){
                 [self makeSureSomeOfTheExpandedContentIsVisible:changedSection];
             }
@@ -130,8 +134,11 @@
 -(void)makeSureSomeOfTheExpandedContentIsVisible:(ODSAccordionSectionView *)expandedSection {
     CGRect expandedSectionRect = [self convertRect:expandedSection.sectionView.frame
                                           fromView:expandedSection];
-    [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, 1, 100)
-                     animated:YES];
+    //FIXME: figure out why the origin is sometimes negative
+    if (expandedSectionRect.origin.y > 0){
+        [self scrollRectToVisible:CGRectMake(expandedSectionRect.origin.x, expandedSectionRect.origin.y, self.width, 100)
+                         animated:YES];
+    }
 }
 
 -(CGFloat)width {

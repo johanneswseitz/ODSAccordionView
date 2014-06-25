@@ -27,20 +27,34 @@
         _sectionView = sectionView;
         self.backgroundColor = _sectionStyle.backgroundColor;
         [self setClipsToBounds:YES];
+        
         [self makeHeader:sectionTitle];
         [self addArrowIcon];
+        
         [self addSubview: sectionView];
+        [sectionView addObserver:self forKeyPath:NSStringFromSelector(@selector(bounds)) options:0 context:nil];
+        
         [self layoutIfNeeded];
         [self collapseSectionAnimated:NO];
     }
     return self;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(bounds))] && self.expanded){
+        self.height = [self expandedHeight];
+    }
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+}
+
 -(void)makeHeader:(NSString *)sectionTitle {
     _header = [UIButton buttonWithType:UIButtonTypeCustom];
     [_header setTitle:sectionTitle forState:UIControlStateNormal];
     [_header setTitleColor:_sectionStyle.headerTitleLabelTextColor forState:UIControlStateNormal];
-
     _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchDown];
@@ -59,7 +73,7 @@
     self.height = self.collapsedHeight;
     _sectionViewAlpha = 0.0;
     [self sectionViewAlphaChanged:animated];
-    [_arrowIcon pointDownAnimated:YES];
+    [_arrowIcon pointDownAnimated:animated];
 }
 
 -(void)expandSectionAnimated:(BOOL)animated {
@@ -67,7 +81,7 @@
     self.height = self.expandedHeight;
     _sectionViewAlpha = 1.0;
     [self sectionViewAlphaChanged:animated];
-    [_arrowIcon pointUpAnimated:YES];
+    [_arrowIcon pointUpAnimated:animated];
 }
 
 -(void)sectionViewAlphaChanged:(BOOL)animated {
@@ -120,11 +134,11 @@
 }
 
 -(void)layoutSection {
-    _sectionView.frame = CGRectMake(0, self.headerHeight, self.width, _sectionView.frame.size.height);
+    _sectionView.frame = CGRectMake(0, self.headerHeight, self.width, _sectionView.bounds.size.height);
 }
 
 -(CGFloat)expandedHeight {
-    return _sectionView.frame.size.height  + self.headerHeight;
+    return _sectionView.bounds.size.height  + self.headerHeight;
 }
 
 -(CGFloat)collapsedHeight {
