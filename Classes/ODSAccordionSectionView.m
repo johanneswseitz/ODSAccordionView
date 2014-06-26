@@ -57,6 +57,7 @@
     _header = [UIButton buttonWithType:UIButtonTypeCustom];
     [_header setTitle:sectionTitle forState:UIControlStateNormal];
     [_header setTitleColor:_sectionStyle.headerTitleLabelTextColor forState:UIControlStateNormal];
+    [_header setTitleColor:_sectionStyle.headerTitleLabelHighlightedTextColor forState:UIControlStateHighlighted];
     _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchDown];

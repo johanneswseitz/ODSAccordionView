@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3117A88341414839AA3A159B /* libPods-ODSAccordionViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4226AE28774B6189A389F2 /* libPods-ODSAccordionViewTests.a */; };
-		625C957C195AFD3E00C9A4A9 /* ODSEmbeddableWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C957B195AFD3E00C9A4A9 /* ODSEmbeddableWebView.m */; };
 		6289874019505F2800C78D50 /* ODSAccordionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289873C19505F2800C78D50 /* ODSAccordionSection.m */; };
 		6289874119505F2800C78D50 /* ODSAccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289873F19505F2800C78D50 /* ODSAccordionView.m */; };
 		628987471950773D00C78D50 /* ODSAccordionSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 628987461950773D00C78D50 /* ODSAccordionSectionView.m */; };
@@ -48,8 +47,6 @@
 
 /* Begin PBXFileReference section */
 		0F4226AE28774B6189A389F2 /* libPods-ODSAccordionViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ODSAccordionViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		625C957A195AFD3E00C9A4A9 /* ODSEmbeddableWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSEmbeddableWebView.h; sourceTree = "<group>"; };
-		625C957B195AFD3E00C9A4A9 /* ODSEmbeddableWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSEmbeddableWebView.m; sourceTree = "<group>"; };
 		6289873B19505F2800C78D50 /* ODSAccordionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSAccordionSection.h; sourceTree = "<group>"; };
 		6289873C19505F2800C78D50 /* ODSAccordionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODSAccordionSection.m; sourceTree = "<group>"; };
 		6289873D19505F2800C78D50 /* ODSAccordionView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ODSAccordionView-Prefix.pch"; path = "../Classes/ODSAccordionView-Prefix.pch"; sourceTree = "<group>"; };
@@ -111,8 +108,6 @@
 				AB428F58E0375AF0030B6D45 /* ODSAccordionSectionStyle.h */,
 				62FED10D1951D2FC004745FB /* ODSArrowIcon.h */,
 				62FED10E1951D2FC004745FB /* ODSArrowIcon.m */,
-				625C957A195AFD3E00C9A4A9 /* ODSEmbeddableWebView.h */,
-				625C957B195AFD3E00C9A4A9 /* ODSEmbeddableWebView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -286,7 +281,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				628987471950773D00C78D50 /* ODSAccordionSectionView.m in Sources */,
-				625C957C195AFD3E00C9A4A9 /* ODSEmbeddableWebView.m in Sources */,
 				62FED10F1951D2FC004745FB /* ODSArrowIcon.m in Sources */,
 				6289874119505F2800C78D50 /* ODSAccordionView.m in Sources */,
 				6289874019505F2800C78D50 /* ODSAccordionSection.m in Sources */,

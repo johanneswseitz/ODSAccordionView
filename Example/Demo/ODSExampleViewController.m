@@ -43,7 +43,6 @@
     ODSAccordionSectionStyle *style = [[ODSAccordionSectionStyle alloc] init];
     style.arrowColor = lightBlue;
     style.headerStyle = ODSAccordionHeaderStyleLabelLeft;
-    style.headerTitleLabelTextColor = [UIColor blackColor];
     style.headerTitleLabelFont = [UIFont systemFontOfSize:15];
     style.backgroundColor = blue;
     style.headerBackgroundColor = darkBlue;

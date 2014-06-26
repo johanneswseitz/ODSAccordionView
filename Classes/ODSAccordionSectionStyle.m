@@ -14,6 +14,7 @@
         _headerHeight = 30;
         _headerTitleLabelFont = [UIFont systemFontOfSize:14];
         _headerTitleLabelTextColor = [UIColor blackColor];
+        _headerTitleLabelHighlightedTextColor = [UIColor darkGrayColor];
         _headerStyle = ODSAccordionHeaderStyleLabelLeft;
         _headerBackgroundColor = [UIColor clearColor];
         _backgroundColor = [UIColor clearColor];

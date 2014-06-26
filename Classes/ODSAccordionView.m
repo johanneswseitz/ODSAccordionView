@@ -24,6 +24,7 @@
     if (self) {
         _sectionViews = @[];
         _sectionStyle = sectionStyle;
+        self.delaysContentTouches = NO;
         for (NSUInteger i = 0; i < [sections count]; i++) {
             ODSAccordionSection*currentSection = [sections objectAtIndex:i];
             ODSAccordionSectionView *sectionView =
