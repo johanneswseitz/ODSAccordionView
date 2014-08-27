@@ -26,7 +26,6 @@
         CGFloat middle = frame.size.width / 2.0;
         leftArrowPart.frame = CGRectMake(0, 0, middle + overlap, frame.size.height);
         [self addSubview: leftArrowPart];
-        
         rightArrowPart = [self makeArrowPart];
         rightArrowPart.frame = CGRectMake(middle - overlap , 0, frame.size.width/2 + overlap, frame.size.height);
         [self addSubview:rightArrowPart];
@@ -39,6 +38,7 @@
 -(UIView *)makeArrowPart {
     UIView *arrowPart = [[UIView alloc] init];
     arrowPart.layer.cornerRadius = 4;
+    arrowPart.layer.allowsEdgeAntialiasing = YES;
     return arrowPart;
 }
 
