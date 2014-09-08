@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "ODSAccordionView"
-  s.version          = "0.4.2"
+  s.version          = "0.4.3"
   s.summary          = "Yet another accordion style container view."
   s.description      = <<-DESC
                        Yet another accordion style container view

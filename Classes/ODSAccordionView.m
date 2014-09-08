@@ -24,7 +24,6 @@
     if (self) {
         _sectionViews = @[];
         _sectionStyle = sectionStyle;
-        self.delaysContentTouches = NO;
         for (NSUInteger i = 0; i < [sections count]; i++) {
             ODSAccordionSection*currentSection = [sections objectAtIndex:i];
             ODSAccordionSectionView *sectionView =
@@ -47,7 +46,6 @@
     }
 }
 
-
 -(void)requestNotificationWhenSectionHeightChanges:(ODSAccordionSectionView *)sectionView {
     [sectionView addObserver:self forKeyPath:SECTION_HEIGHT_GETTER options:0 context:nil];
 }
@@ -59,6 +57,13 @@
         }
         @catch (NSException * __unused exception) {}
     }
+}
+
+- (BOOL)touchesShouldCancelInContentView:(UIView *)view {
+    if ([view isKindOfClass:[UIButton class]])
+        return NO;
+    else
+        return YES;
 }
 
 -(UIView *)makeDivider:(UIColor *)dividerColour {

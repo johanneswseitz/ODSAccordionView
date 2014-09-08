@@ -1,5 +1,9 @@
 # ODSAccordionView CHANGELOG
 
+## 0.4.1, 0.4.2, 0.4.3
+
+[bugfixes] Several smaller bugfixes and tweaks
+
 ## 0.4.0
 
 [improvement] Sections now use the [UIView sizeThatFits:(CGSize) size] method to determine the height of the sections view instead of the frame/bounds of the view.

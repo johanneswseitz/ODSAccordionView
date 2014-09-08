@@ -60,7 +60,7 @@
     [_header setTitleColor:_sectionStyle.headerTitleLabelHighlightedTextColor forState:UIControlStateHighlighted];
     _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
-    [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchDown];
+    [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_header];
 }
 
