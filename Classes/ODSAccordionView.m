@@ -61,9 +61,9 @@
 
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view {
     if ([view isKindOfClass:[UIButton class]])
-        return NO;
-    else
         return YES;
+    else
+        return [super touchesShouldCancelInContentView:view];
 }
 
 -(UIView *)makeDivider:(UIColor *)dividerColour {

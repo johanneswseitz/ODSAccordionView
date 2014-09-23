@@ -61,6 +61,47 @@
                                                              andView: [self slowWebView]],
                           [[ODSAccordionSection alloc] initWithTitle:@"Your own content"
                                                              andView: [self emptyView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Text"
+                                                             andView: [self textView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Cat content"
+                                                             andView: [self imageView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Web content"
+                                                             andView: [self webView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Slow loading web content"
+                                                             andView: [self slowWebView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Your own content"
+                                                             andView: [self emptyView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Text"
+                                                             andView: [self textView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Cat content"
+                                                             andView: [self imageView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Web content"
+                                                             andView: [self webView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Slow loading web content"
+                                                             andView: [self slowWebView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Your own content"
+                                                             andView: [self emptyView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Text"
+                                                             andView: [self textView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Cat content"
+                                                             andView: [self imageView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Web content"
+                                                             andView: [self webView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Slow loading web content"
+                                                             andView: [self slowWebView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Your own content"
+                                                             andView: [self emptyView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Text"
+                                                             andView: [self textView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Cat content"
+                                                             andView: [self imageView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Web content"
+                                                             andView: [self webView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Slow loading web content"
+                                                             andView: [self slowWebView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Your own content"
+                                                             andView: [self emptyView]],
+
                          ];
     _accordionView = [[ODSAccordionView alloc] initWithSections:sections andSectionStyle:style];
     _accordionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;

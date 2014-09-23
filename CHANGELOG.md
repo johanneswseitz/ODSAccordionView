@@ -1,6 +1,6 @@
 # ODSAccordionView CHANGELOG
 
-## 0.4.1, 0.4.2, 0.4.3
+## 0.4.1, 0.4.2, 0.4.3, 0.4.4
 
 [bugfixes] Several smaller bugfixes and tweaks
 
