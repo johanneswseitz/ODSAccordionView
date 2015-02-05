@@ -89,7 +89,7 @@
 
 -(void)sectionViewAlphaChanged:(BOOL)animated {
     if (animated){
-        [UIView animateWithDuration:0.5 animations:^{ _sectionView.alpha = _sectionViewAlpha; }];
+        [UIView animateWithDuration:_sectionStyle.animationDuration animations:^{ _sectionView.alpha = _sectionViewAlpha; }];
     } else {
         _sectionView.alpha = _sectionViewAlpha;
     }

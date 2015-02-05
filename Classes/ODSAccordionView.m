@@ -126,7 +126,7 @@
                       context:(void *)context {
     if ([keyPath isEqualToString:SECTION_HEIGHT_GETTER]) {
         ODSAccordionSectionView *changedSection = (ODSAccordionSectionView *) object;
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:_sectionStyle.animationDuration animations:^{
             [self updateViewLayout];
             if (changedSection.isExpanded){
                 [self makeSureSomeOfTheExpandedContentIsVisible:changedSection];

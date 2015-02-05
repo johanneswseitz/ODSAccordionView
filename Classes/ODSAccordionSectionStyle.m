@@ -21,6 +21,7 @@
         _dividerColor = [UIColor lightGrayColor];
         _arrowVisible = YES;
         _stickyHeaders = YES;
+        _animationDuration = 0.5;
     }
     return self;
 }

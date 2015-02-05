@@ -31,6 +31,8 @@ typedef enum ODSAccordionHeaderStyle : NSUInteger {
 @property (nonatomic) UIColor *dividerColor;
 /// Defaults to [self dividerColour]
 @property (nonatomic) UIColor *arrowColor;
+/// Defaults to 0.5
+@property (nonatomic) NSTimeInterval animationDuration;
 /// Defaults to YES
 @property (nonatomic) BOOL arrowVisible;
 /// Keep the section headers visible on top while scrolling. Defaults to YES
