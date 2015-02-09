@@ -50,12 +50,13 @@
     style.headerHeight = 40;
     style.stickyHeaders = YES;
     style.animationDuration = 0.2;
+    style.arrowHeight = 1;
 
     NSArray *sections = @[
                           [[ODSAccordionSection alloc] initWithTitle:@"Text"
                                                              andView: [self textView]],
                           [[ODSAccordionSection alloc] initWithTitle:@"Cat content"
-                                                             andView: [self imageView]],
+                                                             andView: [self imageView] collapse:NO],
                           [[ODSAccordionSection alloc] initWithTitle:@"Web content"
                                                              andView: [self webView]],
                           [[ODSAccordionSection alloc] initWithTitle:@"Slow loading web content"
