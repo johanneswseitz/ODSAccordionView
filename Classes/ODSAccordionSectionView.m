@@ -22,6 +22,12 @@
 
 -(instancetype)initWithTitle:(NSString *)sectionTitle
                      andView:(UIView *)sectionView
+                sectionStyle:(ODSAccordionSectionStyle *)sectionStyle {
+    return [self initWithTitle:sectionTitle andView:sectionView sectionStyle:sectionStyle collapse:YES];
+}
+
+-(instancetype)initWithTitle:(NSString *)sectionTitle
+                     andView:(UIView *)sectionView
                 sectionStyle:(ODSAccordionSectionStyle *)sectionStyle
                     collapse:(BOOL)collapse{
     self = [super init];
@@ -96,7 +102,7 @@
 
 -(void)sectionViewAlphaChanged:(BOOL)animated {
     if (animated){
-        [UIView animateWithDuration:0.25 animations:^{ _sectionView.alpha = _sectionViewAlpha; }];
+        [UIView animateWithDuration:_sectionStyle.animationDuration animations:^{ _sectionView.alpha = _sectionViewAlpha; }];
     } else {
         _sectionView.alpha = _sectionViewAlpha;
     }
