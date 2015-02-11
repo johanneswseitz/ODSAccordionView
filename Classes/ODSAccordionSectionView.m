@@ -22,7 +22,8 @@
 
 -(instancetype)initWithTitle:(NSString *)sectionTitle
                      andView:(UIView *)sectionView
-                sectionStyle:(ODSAccordionSectionStyle *)sectionStyle {
+                sectionStyle:(ODSAccordionSectionStyle *)sectionStyle
+                    collapse:(BOOL)collapse{
     self = [super init];
     if (self) {
         _sectionStyle = sectionStyle;
@@ -36,8 +37,14 @@
         [self addSubview: sectionView];
         [sectionView addObserver:self forKeyPath:BOUNDS_KEY_PATH options:0 context:nil];
         
+        if (collapse) {
+            [self collapseSectionAnimated:NO];
+        } else {
+            [self expandSectionAnimated:NO];
+        }
+        
         [self layoutIfNeeded];
-        [self collapseSectionAnimated:NO];
+        
     }
     return self;
 }
@@ -65,7 +72,7 @@
 }
 
 -(void)addArrowIcon {
-    _arrowIcon = [[ODSArrowIcon alloc] initWithFrame:CGRectMake(0, 0, 30, 5)];
+    _arrowIcon = [[ODSArrowIcon alloc] initWithFrame:CGRectMake(0, 0, 30, _sectionStyle.arrowHeight)];
     [_arrowIcon setHidden:!_sectionStyle.arrowVisible];
     _arrowIcon.color = _sectionStyle.arrowColor;
     [self.header addSubview:_arrowIcon];
@@ -89,7 +96,7 @@
 
 -(void)sectionViewAlphaChanged:(BOOL)animated {
     if (animated){
-        [UIView animateWithDuration:_sectionStyle.animationDuration animations:^{ _sectionView.alpha = _sectionViewAlpha; }];
+        [UIView animateWithDuration:0.25 animations:^{ _sectionView.alpha = _sectionViewAlpha; }];
     } else {
         _sectionView.alpha = _sectionViewAlpha;
     }
