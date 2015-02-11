@@ -27,9 +27,10 @@
         for (NSUInteger i = 0; i < [sections count]; i++) {
             ODSAccordionSection*currentSection = [sections objectAtIndex:i];
             ODSAccordionSectionView *sectionView =
-                    [[ODSAccordionSectionView alloc] initWithTitle:currentSection.title
-                                                           andView:currentSection.view
-                                                      sectionStyle:sectionStyle];
+            [[ODSAccordionSectionView alloc] initWithTitle:currentSection.title
+                                                   andView:currentSection.view
+                                              sectionStyle:sectionStyle
+                                                  collapse:currentSection.collapse];
             [self addSection:sectionView];
         }
     }
