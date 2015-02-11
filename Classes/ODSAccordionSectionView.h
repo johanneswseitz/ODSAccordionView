@@ -20,6 +20,11 @@
 
 -(instancetype)initWithTitle:(NSString *)sectionTitle
                      andView:(UIView *)sectionView
-                sectionStyle:(ODSAccordionSectionStyle *)sectionStyle NS_DESIGNATED_INITIALIZER;
+                sectionStyle:(ODSAccordionSectionStyle *)sectionStyle;
+
+-(instancetype)initWithTitle:(NSString *)sectionTitle
+                     andView:(UIView *)sectionView
+                sectionStyle:(ODSAccordionSectionStyle *)sectionStyle
+                    collapse:(BOOL)collapse NS_DESIGNATED_INITIALIZER;
 
 @end
