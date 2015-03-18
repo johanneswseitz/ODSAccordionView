@@ -38,6 +38,8 @@
         [self setClipsToBounds:YES];
         
         [self makeHeader:sectionTitle];
+
+        sectionStyle.headerHeight = self.headerHeight;
         [self addArrowIcon];
         
         [self addSubview: sectionView];
@@ -73,6 +75,8 @@
     [_header setTitleColor:_sectionStyle.headerTitleLabelHighlightedTextColor forState:UIControlStateHighlighted];
     _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
+    _header.titleLabel.numberOfLines=0;
+    _header.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_header];
 }
@@ -118,7 +122,7 @@
 }
 
 -(CGFloat)headerHeight {
-    return _sectionStyle.headerHeight;
+    return [_header.titleLabel sizeThatFits:CGSizeMake(self.width-35, CGFLOAT_MAX)].height+25;
 }
 
 -(void)layoutSubviews {
@@ -128,6 +132,11 @@
 }
 
 -(void)layoutHeader {
+
+    _sectionStyle.headerHeight = self.headerHeight;
+    if(!self.isExpanded){
+        self.height = self.collapsedHeight;
+    }
     _header.frame = CGRectMake(_header.frame.origin.x, _header.frame.origin.y, self.width, self.headerHeight);
     CGSize arrowSize = _arrowIcon.frame.size;
     if (_sectionStyle.headerStyle == ODSAccordionHeaderStyleLabelLeft){
