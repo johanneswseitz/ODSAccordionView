@@ -39,5 +39,7 @@ typedef enum ODSAccordionHeaderStyle : NSUInteger {
 @property (nonatomic) BOOL arrowVisible;
 /// Keep the section headers visible on top while scrolling. Defaults to YES
 @property (nonatomic) BOOL stickyHeaders;
+/// allow section headers to span multiple lines and automatically adjust height accordingly
+@property (nonatomic) BOOL multiLineSectionHeader;
 
 @end

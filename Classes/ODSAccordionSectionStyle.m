@@ -23,6 +23,7 @@
         _stickyHeaders = YES;
         _animationDuration = 0.5;
         _arrowHeight = 5;
+        _multiLineSectionHeader = NO;
     }
     return self;
 }

@@ -75,7 +75,9 @@
     [_header setTitleColor:_sectionStyle.headerTitleLabelHighlightedTextColor forState:UIControlStateHighlighted];
     _header.backgroundColor = _sectionStyle.headerBackgroundColor;
     _header.titleLabel.font = _sectionStyle.headerTitleLabelFont;
-    _header.titleLabel.numberOfLines=0;
+    if(_sectionStyle.multiLineSectionHeader){
+        _header.titleLabel.numberOfLines=0;
+    }
     _header.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
     [_header addTarget:self action:@selector(toggleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_header];
@@ -122,11 +124,15 @@
 }
 
 -(CGFloat)headerHeight {
-    int rightPadding = 35;
-    int heightPadding = 25;
-    CGSize headerBounds = CGSizeMake(self.width - rightPadding, CGFLOAT_MAX);
-    CGSize headerFittingSize = [_header.titleLabel sizeThatFits:headerBounds];
-    return headerFittingSize.height + heightPadding;
+    if(_sectionStyle.multiLineSectionHeader){
+        int rightPadding = 35;
+        int heightPadding = 25;
+        CGSize headerBounds = CGSizeMake(self.width - rightPadding, CGFLOAT_MAX);
+        CGSize headerFittingSize = [_header.titleLabel sizeThatFits:headerBounds];
+        return headerFittingSize.height + heightPadding;
+    }else{
+        return _sectionStyle.headerHeight;
+    }
 }
 
 -(void)layoutSubviews {
@@ -136,8 +142,6 @@
 }
 
 -(void)layoutHeader {
-
-    _sectionStyle.headerHeight = self.headerHeight;
     if(!self.isExpanded){
         self.height = self.collapsedHeight;
     }
