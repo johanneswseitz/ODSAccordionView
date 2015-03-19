@@ -122,7 +122,11 @@
 }
 
 -(CGFloat)headerHeight {
-    return [_header.titleLabel sizeThatFits:CGSizeMake(self.width-35, CGFLOAT_MAX)].height+25;
+    int rightPadding = 35;
+    int heightPadding = 25;
+    CGSize headerBounds = CGSizeMake(self.width - rightPadding, CGFLOAT_MAX);
+    CGSize headerFittingSize = [_header.titleLabel sizeThatFits:headerBounds];
+    return headerFittingSize.height + heightPadding;
 }
 
 -(void)layoutSubviews {
