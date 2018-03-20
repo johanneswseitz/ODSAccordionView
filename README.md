@@ -4,6 +4,9 @@
 [![License](https://img.shields.io/cocoapods/l/ODSAccordionView.svg?style=flat)](http://cocoadocs.org/docsets/ODSAccordionView)
 [![Platform](https://img.shields.io/cocoapods/p/ODSAccordionView.svg?style=flat)](http://cocoadocs.org/docsets/ODSAccordionView)
 
+!IMPORTANT! 
+I can no longer maintain this project. Please consider forking and maintining your own fork if you would like to use this control.
+
 Yet another accordion style container view
 
 * Made for iOS 7+.
