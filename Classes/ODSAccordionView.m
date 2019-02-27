@@ -118,7 +118,7 @@
 }
 
 -(void)updateScrollViewContentSize:(CGFloat)bottomOfLastSection {
-    self.contentSize = CGSizeMake([self width], bottomOfLastSection);
+    self.contentSize = CGSizeMake([self width], bottomOfLastSection + self.frame.origin.y);
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath
